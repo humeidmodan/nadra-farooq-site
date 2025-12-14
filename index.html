@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nadra Farooq | Roupas Personalizadas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f7f7f7;
+    color:#333;
+}
+
+header{
+    background:#2c3e50;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:32px;
+}
+
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+main{
+    padding-top:160px;
+}
+
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(to right,#f39c12,#e67e22);
+    color:white;
+    padding:80px 20px;
+    border-radius:10px;
+    margin:20px;
+}
+
+.hero h2{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-top:15px;
+}
+
+.hero button{
+    margin-top:25px;
+    padding:15px 30px;
+    font-size:16px;
+    background:#2c3e50;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.hero button:hover{
+    background:#1a252f;
+}
+
+/* PRODUTOS */
+.produtos{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.produto{
+    background:white;
+    width:260px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    padding:15px;
+    transition:transform 0.3s;
+}
+
+.produto:hover{
+    transform:scale(1.05);
+}
+
+.produto img{
+    width:100%;
+    border-radius:10px;
+}
+
+.produto p{
+    margin-top:10px;
+    font-weight:600;
+}
+
+/* FORMULÁRIO */
+form{
+    max-width:450px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    text-align:left;
+}
+
+label{
+    font-weight:600;
+    display:block;
+    margin-top:15px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button.enviar{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    background:#27ae60;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button.enviar:hover{
+    background:#1e8449;
+}
+
+footer{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Nadra Farooq</h1>
+<p>Roupas feitas à mão • Personalizadas para você</p>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#produtos">Produtos</a>
+<a href="#pedido">Pedido</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+<h2>Crie a roupa perfeita para o seu corpo</h2>
+<p>Escolha o tecido, a cor e informe suas medidas. Nós fazemos o resto.</p>
+<button onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">
+Fazer pedido
+</button>
+</section>
+
+<section id="produtos">
+<h2>Nossos Modelos</h2>
+<div class="produtos">
+<div class="produto">
+<img src="https://via.placeholder.com/300x300?text=Vestido">
+<p>Vestidos</p>
+</div>
+<div class="produto">
+<img src="https://via.placeholder.com/300x300?text=Camisa">
+<p>Camisas</p>
+</div>
+<div class="produto">
+<img src="https://via.placeholder.com/300x300?text=Conjunto">
+<p>Conjuntos</p>
+</div>
+</div>
+</section>
+
+<section id="pedido">
+<h2>Faça seu Pedido</h2>
+
+<form onsubmit="enviarPedido(event)">
+<label>Nome</label>
+<input type="text" required>
+
+<label>Telefone</label>
+<input type="text" value="848592341" required>
+
+<label>Email</label>
+<input type="email" value="nadramodan01@gmail.com" required>
+
+<label>Cor do tecido</label>
+<select>
+<option>Preto</option>
+<option>Branco</option>
+<option>Vermelho</option>
+<option>Azul</option>
+<option>Verde</option>
+</select>
+
+<label>Tipo de tecido</label>
+<select>
+<option>Algodão</option>
+<option>Linho</option>
+<option>Seda</option>
+<option>Jeans</option>
+</select>
+
+<h3 style="margin-top:20px;">Medidas (cm)</h3>
+
+<label>Altura</label>
+<input type="number" required>
+
+<label>Busto / Peito</label>
+<input type="number" required>
+
+<label>Cintura</label>
+<input type="number" required>
+
+<label>Quadril</label>
+<input type="number" required>
+
+<label>Observações</label>
+<textarea rows="3"></textarea>
+
+<button class="enviar">Enviar Pedido</button>
+</form>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>📞 Telefone: 848592341</p>
+<p>📧 Email: nadramodan01@gmail.com</p>
+</section>
+
+</main>
+
+<footer>
+<p>© 2025 Nadra Farooq • Todos os direitos reservados</p>
+</footer>
+
+<script>
+function enviarPedido(event){
+    event.pre
